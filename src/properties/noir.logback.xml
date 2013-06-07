@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+  <appender name="DEBUG" 
+    class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <prudent>true</prudent>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <FileNamePattern>/var/log/app/debug/debug_%d{yyyyMMdd}.log</FileNamePattern>
+    </rollingPolicy>
+    <encoder>
+      <Pattern>%d{yyyy-MM-dd HH:mm:ss} %msg%n</Pattern>
+    </encoder>
+  </appender>
+
+  <appender name="ERROR" 
+    class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <prudent>true</prudent>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <FileNamePattern>/var/log/app/error/error_%d{yyyyMMdd}.log</FileNamePattern>
+    </rollingPolicy>
+    <encoder>
+      <Pattern>%d{yyyy-MM-dd HH:mm:ss} %msg%n</Pattern>
+    </encoder>
+  </appender>
+
+  <appender name="STDOUT"
+    class="ch.qos.logback.core.ConsoleAppender">
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <Pattern>%d{yyyy-MM-dd HH:mm:ss} %msg%n</Pattern>
+    </layout>
+  </appender>
+
+  <root>
+    <level value="debug" />
+    <appender-ref ref="STDOUT" />
+  </root>
+  <logger name="DEBUG" level="TRACE">
+      <appender-ref ref="DEBUG" />
+  </logger>
+  <logger name="ERROR" level="TRACE">
+      <appender-ref ref="ERROR" />
+  </logger>
+</configuration>
