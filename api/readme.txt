@@ -1,5 +1,5 @@
 ﻿○概要
-サーバのソースはEclipse 4.2 Junoのプロジェクトファイルになっています。
+サーバのソースはEclipseのプロジェクトファイルになっています。
 Eclipseにプロジェクトとしてインポートすることによってビルドできます。
 
 ○ディレクトリ構造
@@ -15,14 +15,11 @@ api/src
 api/src/properties
 設定ファイル配置用ディレクトリ
 
-api/war/
-WARファイル出力用ディレクトリ
-
-api/webapps/WEB-INF/classes
-Eclipse開発用クラス出力用フォルダ
-
 api/webapps/WEB-INF/lib
 Servlet用読み込みライブラリ
 
 api/webapps/WEB-INF/web.xml
 Servletマッピングファイル
+
+api/webapps/META-INF/context.xml
+Servletコンテキストファイル
